@@ -2,8 +2,11 @@ package com.mrrobot;
 
 import org.junit.jupiter.api.*;
 
-@DisplayName("Junit Test 001 (basic)")
-public class JunitTest_001 {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+@DisplayName("Junit Basic structure")
+public class BasicStructure {
     @BeforeAll
     static void beforeAll() {
         System.out.println("beforeAll");
@@ -25,14 +28,14 @@ public class JunitTest_001 {
     }
 
     @Test
-    @DisplayName("Test 001-01")
-    void Test_001_01() {
-        System.out.println("Test_001_01");
+    @DisplayName("Simple boolean test")
+    void SimpleBooleanTest() {
+        assertTrue(true);
     }
 
     @Test
-    @DisplayName("Test 001-02")
-    void Test_001_02() {
-        System.out.println("Test_001_02");
+    @DisplayName("Simple equality test")
+    void SimpleEqualityTest() {
+        assertEquals(5,5);
     }
 }

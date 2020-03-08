@@ -4,8 +4,8 @@ import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("Junit Test 003 (exception)")
-public class JunitTest_003 {
+@DisplayName("Junit exception test")
+public class ExceptionTest {
 
     @BeforeAll
     static void beforeAll() {
@@ -28,8 +28,8 @@ public class JunitTest_003 {
     }
 
     @Test
-    @DisplayName("Test 003-01")
-    void Test_003_01() {
+    @DisplayName("Simple NullPointerException test")
+    void nullPointerTest() {
         System.out.println("Test_001_01");
 
         assertThrows(NullPointerException.class, () -> {
@@ -38,9 +38,8 @@ public class JunitTest_003 {
     }
 
     @Test
-    @DisplayName("Test 003-02")
-    void Test_003_02() {
-        System.out.println("Test_001_02");
+    @DisplayName("NullPointerException with message test")
+    void nullPointerWithMessageTest() {
 
         final String message = "Null pointer exception.";
         final NullPointerException exception = assertThrows(NullPointerException.class, () -> {
@@ -51,11 +50,11 @@ public class JunitTest_003 {
     }
 
     @Test
-    @DisplayName("Test 003-03")
-    void Test_003_03() {
-        System.out.println("Test_003_03");
-        assertDoesNotThrow(() -> {
+    @DisplayName("DoesNotThrow exception test")
+    void doesNotThrowExceptionTest() {
 
+        assertDoesNotThrow(() -> {
+            System.out.println("No exception here");
         });
     }
 }
